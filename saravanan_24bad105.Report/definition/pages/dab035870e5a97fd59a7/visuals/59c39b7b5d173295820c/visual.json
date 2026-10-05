@@ -4,10 +4,10 @@
   "position": {
     "x": 753.22580645161293,
     "y": 453.22580645161293,
-    "z": 7,
+    "z": 7000,
     "height": 266.12903225806451,
     "width": 501.61290322580646,
-    "tabOrder": 7
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -112,65 +112,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6cc611bd657fb9e90586",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "raw_sales"
-              }
-            },
-            "Property": "Average Transaction Value"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6aca614676bdd12ac199",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "raw_sales"
-              }
-            },
-            "Property": "Total Sales"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "19edeb6aad02364bcf3e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "raw_sales"
-              }
-            },
-            "Property": "item"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7f36a4ea2951c1d3831f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_city"
-              }
-            },
-            "Property": "city"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

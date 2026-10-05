@@ -4,10 +4,10 @@
   "position": {
     "x": 377.41935483870969,
     "y": 70.967741935483872,
-    "z": 1,
+    "z": 1000,
     "height": 100,
     "width": 191.93548387096774,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -155,40 +155,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "e99b92c034dbd18c4251",
-        "field": {
-          "Arithmetic": {
-            "Left": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "raw_sales"
-                  }
-                },
-                "Property": "MoM Growth %"
-              }
-            },
-            "Right": {
-              "ScopedEval": {
-                "Expression": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "raw_sales"
-                      }
-                    },
-                    "Property": "MoM Growth %"
-                  }
-                },
-                "Scope": []
-              }
-            },
-            "Operator": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

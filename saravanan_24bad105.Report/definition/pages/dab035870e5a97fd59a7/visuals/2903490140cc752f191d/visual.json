@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "2903490140cc752f191d",
   "position": {
-    "x": 51.612903225806456,
-    "y": 70.967741935483872,
+    "x": 32.258064516129032,
+    "y": 72.58064516129032,
     "z": 0,
     "height": 100,
     "width": 191.93548387096774,
@@ -115,23 +115,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bd9545e3696cddcca9e2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "raw_sales"
-              }
-            },
-            "Property": "Total Sales"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

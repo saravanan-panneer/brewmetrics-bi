@@ -4,10 +4,10 @@
   "position": {
     "x": 1014.516129032258,
     "y": 70.967741935483872,
-    "z": 3,
+    "z": 3000,
     "height": 101.61290322580645,
     "width": 217.74193548387098,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -98,23 +98,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "893cea0d22bc0d3efa80",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "raw_sales"
-              }
-            },
-            "Property": "Average Transaction Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "11592a2c96f1aa9a771e",
+  "position": {
+    "x": 32.258064516129032,
+    "y": 393.54838709677421,
+    "z": 8001,
+    "height": 325.80645161290323,
+    "width": 170.96774193548387,
+    "tabOrder": 8001
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "raw_sales"
+                    }
+                  },
+                  "Property": "item"
+                }
+              },
+              "queryRef": "raw_sales.item",
+              "nativeQueryRef": "item",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1dcf815f68866818207e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "raw_sales"
+              }
+            },
+            "Property": "item"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
