@@ -1,6 +1,13 @@
 table raw_sales
 	lineageTag: b8c5cf5a-f8e7-4777-8047-830cccaf035a
 
+	measure 'Total Sales' =
+			
+			SUM(raw_sales[sales_amount])
+		lineageTag: 66172e73-761d-4cc0-aa2b-ce0546b8e7fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column sale_id
 		dataType: int64
 		formatString: 0
