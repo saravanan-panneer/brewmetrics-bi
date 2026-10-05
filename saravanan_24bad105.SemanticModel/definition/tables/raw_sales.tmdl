@@ -8,6 +8,27 @@ table raw_sales
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Current Sales' =
+			
+			[Total Sales]
+		lineageTag: f452104a-6453-4a1a-8d9f-40b1f21c1bb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Previous Sales' =
+			
+			CALCULATE(
+			    [Total Sales],
+			    DATEADD(
+			        Dim_Date[date],
+			        -1,
+			        MONTH
+			    )
+			)
+		lineageTag: 58ad570b-2e93-4fee-ac52-db02c509bec0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column sale_id
 		dataType: int64
 		formatString: 0
