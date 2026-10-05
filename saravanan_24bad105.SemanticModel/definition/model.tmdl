@@ -14,7 +14,6 @@ annotation PBI_QueryOrder = ["raw_sales","dim_city","dim_product","dim_date"]
 
 ref table raw_sales
 ref table DateTableTemplate_ff6d448d-5a35-4e00-a6fe-9afa62368925
-ref table LocalDateTable_ad0e353a-73f1-487c-936c-49ff7ce0e504
 ref table dim_city
 ref table dim_product
 ref table dim_date

@@ -63,9 +63,10 @@ table dim_date
 				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Month",{{"Month", "Month number"}}),
 				    #"Inserted Month Name" = Table.AddColumn(#"Renamed Columns", "Month Name", each Date.MonthName([date]), type text),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Month Name",{{"Month Name", "month"}}),
-				    #"Inserted Day" = Table.AddColumn(#"Renamed Columns1", "Day", each Date.Day([date]), Int64.Type)
+				    #"Inserted Day" = Table.AddColumn(#"Renamed Columns1", "Day", each Date.Day([date]), Int64.Type),
+				    #"Removed Duplicates" = Table.Distinct(#"Inserted Day", {"date"})
 				in
-				    #"Inserted Day"
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navigation
 
