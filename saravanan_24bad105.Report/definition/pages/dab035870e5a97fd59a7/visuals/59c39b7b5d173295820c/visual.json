@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e06445f92724c3541f4d",
+  "name": "59c39b7b5d173295820c",
   "position": {
     "x": 753.22580645161293,
-    "y": 187.09677419354838,
-    "z": 5,
-    "height": 254.83870967741936,
+    "y": 453.22580645161293,
+    "z": 7,
+    "height": 266.12903225806451,
     "width": 501.61290322580646,
-    "tabOrder": 5
+    "tabOrder": 7
   },
   "visual": {
-    "visualType": "treemap",
+    "visualType": "scatterChart",
     "query": {
       "queryState": {
-        "Details": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,30 +27,49 @@
                 }
               },
               "queryRef": "raw_sales.item",
-              "nativeQueryRef": "item"
+              "nativeQueryRef": "item",
+              "active": true
             }
           ]
         },
-        "Group": {
+        "Series": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "dim_city"
+                    }
+                  },
+                  "Property": "city"
+                }
+              },
+              "queryRef": "dim_city.city",
+              "nativeQueryRef": "city"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "raw_sales"
                     }
                   },
-                  "Property": "category"
+                  "Property": "Average Transaction Value"
                 }
               },
-              "queryRef": "raw_sales.category",
-              "nativeQueryRef": "category",
+              "queryRef": "raw_sales.Average Transaction Value",
+              "nativeQueryRef": "Average Transaction Value",
               "active": true
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -84,20 +103,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'SALES BY CATEGORY'"
+                  "Value": "11D"
                 }
               }
             }
@@ -110,21 +116,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b4f32d37677157540fc",
+        "name": "6cc611bd657fb9e90586",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
                 "Entity": "raw_sales"
               }
             },
-            "Property": "category"
+            "Property": "Average Transaction Value"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced"
       },
       {
-        "name": "11ac91527f5317aa8b11",
+        "name": "6aca614676bdd12ac199",
         "field": {
           "Measure": {
             "Expression": {
@@ -138,7 +144,7 @@
         "type": "Advanced"
       },
       {
-        "name": "89deeb86e5a4adcdef1b",
+        "name": "19edeb6aad02364bcf3e",
         "field": {
           "Column": {
             "Expression": {
@@ -147,6 +153,20 @@
               }
             },
             "Property": "item"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7f36a4ea2951c1d3831f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_city"
+              }
+            },
+            "Property": "city"
           }
         },
         "type": "Categorical"

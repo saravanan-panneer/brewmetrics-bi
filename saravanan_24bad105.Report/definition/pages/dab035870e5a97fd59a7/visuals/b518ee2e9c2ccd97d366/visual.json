@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e06445f92724c3541f4d",
+  "name": "b518ee2e9c2ccd97d366",
   "position": {
-    "x": 753.22580645161293,
-    "y": 187.09677419354838,
-    "z": 5,
+    "x": 220.96774193548387,
+    "y": 464.51612903225805,
+    "z": 6,
     "height": 254.83870967741936,
-    "width": 501.61290322580646,
-    "tabOrder": 5
+    "width": 498.38709677419354,
+    "tabOrder": 6
   },
   "visual": {
-    "visualType": "treemap",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Details": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,11 +27,12 @@
                 }
               },
               "queryRef": "raw_sales.item",
-              "nativeQueryRef": "item"
+              "nativeQueryRef": "item",
+              "active": true
             }
           ]
         },
-        "Group": {
+        "Series": {
           "projections": [
             {
               "field": {
@@ -41,16 +42,15 @@
                       "Entity": "raw_sales"
                     }
                   },
-                  "Property": "category"
+                  "Property": "city"
                 }
               },
-              "queryRef": "raw_sales.category",
-              "nativeQueryRef": "category",
-              "active": true
+              "queryRef": "raw_sales.city",
+              "nativeQueryRef": "city"
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -68,6 +68,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "raw_sales"
+                  }
+                },
+                "Property": "Total Sales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -84,7 +102,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "10D"
                 }
               }
             }
@@ -97,7 +115,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'SALES BY CATEGORY'"
+                  "Value": "'TOP 5 PRODUCTS SOLD'"
                 }
               }
             }
@@ -110,7 +128,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b4f32d37677157540fc",
+        "name": "edbf77ca9efedfd30a6e",
         "field": {
           "Column": {
             "Expression": {
@@ -118,13 +136,13 @@
                 "Entity": "raw_sales"
               }
             },
-            "Property": "category"
+            "Property": "item"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "11ac91527f5317aa8b11",
+        "name": "61079c00bb05b5bfb0ec",
         "field": {
           "Measure": {
             "Expression": {
@@ -138,7 +156,7 @@
         "type": "Advanced"
       },
       {
-        "name": "89deeb86e5a4adcdef1b",
+        "name": "eb80510014282b0d4ecf",
         "field": {
           "Column": {
             "Expression": {
@@ -146,7 +164,7 @@
                 "Entity": "raw_sales"
               }
             },
-            "Property": "item"
+            "Property": "city"
           }
         },
         "type": "Categorical"
