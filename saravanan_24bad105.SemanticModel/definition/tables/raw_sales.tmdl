@@ -46,6 +46,19 @@ table raw_sales
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Running Total Sales' =
+			
+			CALCULATE(
+			    [Total Sales],
+			    FILTER(
+			        ALLSELECTED(Dim_Date[date]),
+			        Dim_Date[date] <= MAX(Dim_Date[date])
+			    )
+			)
+		lineageTag: fcdd2f94-9879-42ae-b25f-fc32cc92f023
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column sale_id
 		dataType: int64
 		formatString: 0
