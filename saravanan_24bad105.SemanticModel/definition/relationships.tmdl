@@ -1,0 +1,18 @@
+relationship 975ae555-a03d-4449-a1f1-b27301155b77
+	joinOnDateBehavior: datePartOnly
+	fromColumn: raw_sales.date
+	toColumn: LocalDateTable_ad0e353a-73f1-487c-936c-49ff7ce0e504.Date
+
+relationship 1a83e8a4-baff-45f0-8088-17a27be39f32
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.date
+	toColumn: LocalDateTable_efbc3688-0256-41a0-9b73-a8b102b15662.Date
+
+relationship AutoDetected_2fa7f533-59ee-447e-bcdd-7d7b634b64fa
+	fromColumn: raw_sales.city
+	toColumn: dim_city.city
+
+relationship AutoDetected_7d5273a7-370e-4b4b-be49-75127a0199b5
+	fromColumn: raw_sales.category
+	toColumn: dim_product.category
+

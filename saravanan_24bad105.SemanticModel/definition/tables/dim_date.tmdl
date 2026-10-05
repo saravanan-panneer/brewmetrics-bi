@@ -1,0 +1,73 @@
+table dim_date
+	lineageTag: 776cabe3-ab3f-47df-a194-69fdaae86d5e
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f0e5e0b2-df4f-4985-8beb-4f1d35cd9561
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 1a83e8a4-baff-45f0-8088-17a27be39f32
+			defaultHierarchy: LocalDateTable_efbc3688-0256-41a0-9b73-a8b102b15662.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: c325fdb5-7da0-46fd-a3f1-935184b87140
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f2dd615-7142-43d1-9bfe-113eac69f01b
+		summarizeBy: sum
+		sourceColumn: Month number
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: string
+		lineageTag: 360619f7-6e8f-4a6b-b153-5e58949a411c
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 44658e1e-4348-4057-a401-b89bce5bd89a
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = raw_sales,
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"sale_id", "city", "store_format", "category", "item", "quantity", "unit_price", "sales_amount"}),
+				    #"Inserted Year" = Table.AddColumn(#"Removed Columns", "Year", each Date.Year([date]), Int64.Type),
+				    #"Inserted Month" = Table.AddColumn(#"Inserted Year", "Month", each Date.Month([date]), Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Month",{{"Month", "Month number"}}),
+				    #"Inserted Month Name" = Table.AddColumn(#"Renamed Columns", "Month Name", each Date.MonthName([date]), type text),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Month Name",{{"Month Name", "month"}}),
+				    #"Inserted Day" = Table.AddColumn(#"Renamed Columns1", "Day", each Date.Day([date]), Int64.Type)
+				in
+				    #"Inserted Day"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
