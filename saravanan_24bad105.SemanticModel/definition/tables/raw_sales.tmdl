@@ -29,6 +29,23 @@ table raw_sales
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'MoM Growth %' =
+			
+			VAR CurrentSales = [Total Sales]
+			VAR PreviousSales =
+			    CALCULATE(
+			        [Total Sales],
+			        DATEADD(Dim_Date[date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(
+			        CurrentSales - PreviousSales,
+			        PreviousSales
+			    )
+		lineageTag: 688a5ece-e7e4-4850-8c3d-37aa257ef892
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column sale_id
 		dataType: int64
 		formatString: 0
