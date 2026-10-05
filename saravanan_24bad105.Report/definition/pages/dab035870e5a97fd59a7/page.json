@@ -18,6 +18,30 @@
           }
         }
       }
+    ],
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#EBF30C'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "83D"
+              }
+            }
+          }
+        }
+      }
     ]
   }
 }

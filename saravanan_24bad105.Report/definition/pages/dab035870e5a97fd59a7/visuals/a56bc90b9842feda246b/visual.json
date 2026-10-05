@@ -155,6 +155,40 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "c83ab670ab9f8d5412cc",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "raw_sales"
+                  }
+                },
+                "Property": "MoM Growth %"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "raw_sales"
+                      }
+                    },
+                    "Property": "MoM Growth %"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
